@@ -86,7 +86,7 @@ export async function fetchBlogPosts(): Promise<BlogPost[]> {
       };
     });
   } catch (err) {
-    console.error("[v0] Blog fetch error:", err);
+    console.error("Blog fetch error:", err);
     return [];
   }
 }
