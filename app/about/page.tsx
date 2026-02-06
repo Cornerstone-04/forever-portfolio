@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import Image from "next/image";
 
 export default function About() {
   return (
@@ -89,17 +90,19 @@ export default function About() {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.8, delay: 0.2 }}
               viewport={{ once: true }}
-              className="relative h-96 md:h-full min-h-96"
+              className="relative flex justify-center items-start md:h-full"
             >
-              <div className="absolute inset-0 bg-linear-to-br from-[#C4A69B]/20 via-[#B8AB9C]/10 to-[#CFC8BE]/20 rounded-lg border border-[#B8AB9C]/20" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="text-center">
-                  <div className="w-32 h-32 md:w-40 md:h-40 mx-auto mb-6 bg-[#CFC8BE]/30 rounded-full flex items-center justify-center border-2 border-[#B8AB9C]/30">
-                    <span className="text-5xl md:text-6xl">✍️</span>
-                  </div>
-                  <p className="text-[#B8AB9C] text-sm uppercase tracking-[0.2em]">
-                    Crafting Compelling Narratives
-                  </p>
+              {/* Adjust max-w-sm (small) or max-w-md (medium) to control the size */}
+              <div className="relative w-full max-w-lg overflow-hidden border border-[#B8AB9C]/20 bg-[#CFC8BE]/10 shadow-xl">
+                <div className="relative aspect-3/4">
+                  <Image
+                    src="/forever-2.jpeg"
+                    alt="Forever Ephraim"
+                    fill
+                    className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
+                    sizes="(max-width: 768px) 100vw, 384px"
+                    priority
+                  />
                 </div>
               </div>
             </motion.div>
