@@ -1,22 +1,33 @@
 "use client";
 
 import Link from "next/link";
-// import { motion } from 'framer-motion'
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
 
   const socialLinks = [
-    { name: "LinkedIn", href: "#" },
-    { name: "Twitter", href: "#" },
-    { name: "Instagram", href: "#" },
-    { name: "Substack", href: "#" },
+    {
+      name: "LinkedIn",
+      href: "https://www.linkedin.com/in/forever-ephraim/",
+    },
+    {
+      name: "Twitter",
+      href: "https://x.com/the__Tamtam",
+    },
+    {
+      name: "Instagram",
+      href: "https://www.instagram.com/_forever.ephraim",
+    },
+    {
+      name: "Substack",
+      href: "https://substack.com/@foreverephraim",
+    },
   ];
 
   return (
     <footer className="border-t border-[#B8AB9C]/20 bg-[#ECE4DB]">
       <div className="max-w-450 mx-auto px-6 md:px-12 py-16 md:py-24">
-        <div className="grid md:grid-cols-12 gap-12">
+        <div className="grid md:grid-cols-12 gap-12 md:justify-items-center">
           {/* Brand */}
           <div className="md:col-span-4">
             <h2
@@ -80,7 +91,15 @@ export function Footer() {
             © {currentYear} Forever Ephraim. All rights reserved.
           </p>
           <p className="text-xs text-[#B8AB9C] font-mono">
-            Designed with intentionality
+            Developed by{" "}
+            <Link
+              href="https://cornerstoneephraim.vercel.app/"
+              className="underline cursor-pointer"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Cornerstone
+            </Link>
           </p>
         </div>
       </div>

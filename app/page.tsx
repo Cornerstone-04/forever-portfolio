@@ -117,9 +117,9 @@ export default function HomePage() {
             className="max-w-2xl"
           >
             <p className="text-lg md:text-xl text-[#B8AB9C] leading-relaxed mb-8">
-              I&apos;m Forever, and I turn boring brand messages into stuff
-              people actually want to read. If your brand needs words with
-              personality, nice to meet you! 👋🏻
+              I turn boring brand messages into stuff people actually want to
+              read. If your brand needs words with personality, nice to meet
+              you! 👋🏻
             </p>
             <Link
               href="/work"
@@ -184,8 +184,8 @@ export default function HomePage() {
                 <em>Featured Work</em>
               </h2>
               <p className="text-lg text-[#B8AB9C] max-w-2xl">
-                A selection of campaigns that drove measurable results through
-                strategic storytelling and data-driven copywriting.
+                A selection of projects where strategic copy met measurable
+                results. Each piece crafted to connect, engage, and convert.
               </p>
             </div>
           </div>

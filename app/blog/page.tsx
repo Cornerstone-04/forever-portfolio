@@ -28,42 +28,41 @@ export default function Blog() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#ECE4DB]">
+    <div className="min-h-screen bg-[#ECE4DB] pt-32">
       {/* Hero Section */}
-      <section className="max-w-6xl mx-auto px-6 py-24 md:py-32">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <h1
-            className="text-6xl md:text-7xl font-light leading-tight mb-12 text-[#3d3d3d]"
-            style={{ fontFamily: "var(--font-display)" }}
+      <section className="py-20 md:py-32 px-4 md:px-12">
+        <div className="max-w-400 mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
           >
-            Blog
-          </h1>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <p className="text-base text-[#B8AB9C] leading-relaxed">
-              Thoughts, insights, and deep dives on content strategy, editorial
-              design, brand communication, and storytelling.
+            <span className="text-xs uppercase tracking-[0.3em] text-[#B8AB9C] mb-8 block">
+              Blog
+            </span>
+            <h1
+              className="text-[clamp(2.5rem,12vw,10rem)] font-black leading-[0.9] tracking-tighter text-[#3d3d3d] uppercase mb-8"
+              style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
+            >
+              On a
+              <br />
+              <span className="text-[#C4A69B]">Journey</span>
+            </h1>
+            <p className="text-lg text-[#B8AB9C] max-w-2xl">
+              Writing about life as it happens. The good, the awkward, and the
+              lessons.
             </p>
-            <p className="text-base text-[#B8AB9C] leading-relaxed">
-              Subscribe to the Substack newsletter to receive new articles
-              directly in your inbox and join a community of content creators
-              and strategists.
-            </p>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Divider */}
-      <div className="max-w-6xl mx-auto px-6">
+      <div className="max-w-400 mx-auto px-6">
         <div className="h-px bg-[#B8AB9C]/20" />
       </div>
 
       {/* Articles Section */}
-      <section className="max-w-6xl mx-auto px-6 py-24">
+      <section className="max-w-400 mx-auto px-6 py-24">
         {loading ? (
           <motion.div
             initial={{ opacity: 0 }}
@@ -180,7 +179,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="max-w-6xl mx-auto px-6 py-24 border-t border-[#B8AB9C]/20">
+      <section className="max-w-400 mx-auto px-6 py-24 border-t border-[#B8AB9C]/20">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -198,7 +197,7 @@ export default function Blog() {
             storytelling delivered directly to your inbox. Join a community of
             creators and strategists.
           </p>
-          <a
+          <Link
             href="https://foreverephraim.substack.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -206,7 +205,7 @@ export default function Blog() {
           >
             Subscribe Now
             <ArrowRight size={18} />
-          </a>
+          </Link>
         </motion.div>
       </section>
     </div>

@@ -36,7 +36,7 @@ export function FAQAccordion({ items }: FAQAccordionProps) {
             </h3>
             <ChevronDown
               size={20}
-              className={`flex-shrink-0 text-[#C4A69B] transition-transform duration-300 ${
+              className={`shrink-0 text-[#C4A69B] transition-transform duration-300 ${
                 openIndex === index ? "rotate-180" : ""
               }`}
             />

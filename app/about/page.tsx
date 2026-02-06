@@ -47,33 +47,39 @@ export default function About() {
                 className="text-5xl md:text-7xl font-light mb-12 text-[#3d3d3d]"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                <em>My Journey</em>
+                <em> &quot;Forever?? That&apos;s Your Real Name?&quot;</em>
               </h2>
 
               <div className="space-y-8 text-lg text-[#B8AB9C] leading-relaxed">
                 <p>
-                  My fascination with words began early—recognizing how language
-                  shapes perception, influences emotion, and drives action. This
-                  curiosity led me to explore content creation, strategic
-                  communication, and the powerful intersection of storytelling
-                  and business results.
+                  YES, that&apos;s really my name, and no, I didn&apos;t make it
+                  up for branding, though maybe I should&apos;ve.
                 </p>
 
                 <p>
-                  Over years of working with diverse brands—from passionate
-                  startups to established organizations—I&apos;ve developed a
-                  nuanced approach to content that balances creativity with
-                  strategy. I&apos;ve learned that the best copy doesn&apos;t
-                  just sound beautiful; it understands the audience, speaks to
-                  their needs, and compels them toward action.
+                  I&apos;ve been writing professionally for 4+ years, starting
+                  out in the trenches of digital marketing: social posts, email
+                  campaigns, blogs, you name it. Since then, I&apos;ve written
+                  for hundreds of brands (plus my own blog — On a Journey) and
+                  I&apos;ve learned this: good copy isn&apos;t about sounding
+                  smart, it&apos;s about sounding human.
                 </p>
 
                 <p>
-                  Today, I specialize in creating compelling narratives that
-                  drive measurable results. Whether it&apos;s crafting social
-                  media copy that converts, developing email campaigns that
-                  engage, or writing scripts that inspire, my goal is always the
-                  same: connect, convert, and create lasting impact.
+                  That&apos;s what I do. Copies that connect, make people feel
+                  something, and (bonus) actually convert.
+                </p>
+                <p>
+                  Case in point: a roofing client hit $100K in 10 months,
+                  another doubled leads, and a mental health company tripled
+                  engagement by leaning into storytelling that felt real.
+                  It&apos;s not magic, it&apos;s just words that sound like they
+                  were written by a person, not a robot.
+                </p>
+
+                <p>
+                  So… if your brand is ready for copy that feels alive, WELCOME.
+                  Let&apos;s get you initiated.
                 </p>
               </div>
             </motion.div>

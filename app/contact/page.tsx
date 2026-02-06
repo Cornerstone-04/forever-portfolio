@@ -3,41 +3,8 @@
 import React from "react";
 import { FAQAccordion } from "@/components/ui/faq-accordion";
 import { motion } from "motion/react";
-import { Mail, Linkedin, Twitter, Instagram, Phone } from "lucide-react";
 import { useState } from "react";
-
-const contactMethods = [
-  {
-    icon: Mail,
-    title: "Email",
-    value: "hello@foreverephraim.com",
-    href: "mailto:hello@foreverephraim.com",
-  },
-  {
-    icon: Phone,
-    title: "Phone",
-    value: "+1 (555) 123-4567",
-    href: "tel:+15551234567",
-  },
-  {
-    icon: Linkedin,
-    title: "LinkedIn",
-    value: "@foreverephraim",
-    href: "#",
-  },
-  {
-    icon: Twitter,
-    title: "Twitter",
-    value: "@foreverephraim",
-    href: "#",
-  },
-  {
-    icon: Instagram,
-    title: "Instagram",
-    value: "@foreverephraim",
-    href: "#",
-  },
-];
+import { contactMethods } from "@/lib/contact-methods";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -87,9 +54,8 @@ export default function Contact() {
               <span className="text-[#C4A69B]">Connect</span>
             </h1>
             <p className="text-lg text-[#B8AB9C] max-w-2xl">
-              I&apos;m excited to hear about your projects. Whether you have
-              questions or just want to explore collaboration opportunities,
-              reach out anytime.
+              Whether you need fresh words, strategic messaging, or just want to
+              say hi — I&apos;d love to connect.
             </p>
           </motion.div>
         </div>
@@ -118,6 +84,8 @@ export default function Contact() {
                   <motion.a
                     key={method.title}
                     href={method.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, delay: index * 0.1 }}
@@ -171,7 +139,8 @@ export default function Contact() {
                   Thank You!
                 </h3>
                 <p className="text-[#B8AB9C]">
-                  Your message has been received. I&apos;ll get back to you soon.
+                  Your message has been received. I&apos;ll get back to you
+                  soon.
                 </p>
               </motion.div>
             ) : (

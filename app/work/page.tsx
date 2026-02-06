@@ -103,13 +103,13 @@ export default function WorkPage() {
               className="text-[clamp(2.5rem,12vw,10rem)] font-black leading-[0.9] tracking-tighter text-[#3d3d3d] uppercase mb-8"
               style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
             >
-              Selected
+              Words That
               <br />
               <span className="text-[#C4A69B]">Work</span>
             </h1>
             <p className="text-lg text-[#B8AB9C] max-w-2xl">
-              Campaigns that drove measurable results through strategic
-              storytelling and data-driven copywriting.
+              A selection of projects where strategic copy met measurable
+              results. Each piece crafted to connect, engage, and convert.
             </p>
           </motion.div>
         </div>
