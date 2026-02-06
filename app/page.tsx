@@ -15,7 +15,7 @@ export default function HomePage() {
   const heroOpacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <div ref={containerRef} className="bg-[#ECE4DB]">
+    <div ref={containerRef} className="bg-[#ECE4DB] pt-24">
       {/* Hero Section - Giant Editorial Text */}
       <Hero y={heroY} opacity={heroOpacity} />
       {/* Featured Work Section */}
