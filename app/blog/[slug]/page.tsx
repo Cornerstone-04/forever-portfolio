@@ -156,7 +156,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <div
             className="text-base text-[#B8AB9C] leading-relaxed"
             dangerouslySetInnerHTML={{
-              __html: post.content.substring(0, 1000) + "...",
+              __html: post.content.substring(0, 5000) + "...",
             }}
           />
           <p className="mt-8 text-[#B8AB9C]">

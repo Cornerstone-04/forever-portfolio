@@ -82,7 +82,7 @@ const experience = [
 const education = [
   {
     degree: "Bachelor of Science in Mass Communications",
-    institution: "National Open University od Nigeria (NOUN)",
+    institution: "National Open University of Nigeria (NOUN)",
     year: "2018-2023",
   },
   {

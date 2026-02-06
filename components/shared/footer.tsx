@@ -31,7 +31,7 @@ export function Footer() {
           {/* Brand */}
           <div className="md:col-span-4">
             <h2
-              className="text-4xl md:text-5xl font-light mb-6"
+              className="text-4xl md:text-5xl font-medium mb-6"
               style={{ fontFamily: "var(--font-display)" }}
             >
               <span className="text-[#3d3d3d]">Forever</span>
