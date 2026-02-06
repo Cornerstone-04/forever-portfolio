@@ -31,7 +31,7 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="group">
             <motion.h1
-              className="text-2xl md:text-3xl font-light tracking-tight"
+              className="text-2xl md:text-3xl font-medium tracking-tight"
               style={{ fontFamily: "var(--font-display)" }}
               whileHover={{ x: 4 }}
               transition={{ duration: 0.3 }}

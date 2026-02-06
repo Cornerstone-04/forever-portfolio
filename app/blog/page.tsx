@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { fetchBlogPosts, type BlogPost } from "@/lib/blog";
+import Image from "next/image";
 
 export default function Blog() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
@@ -100,7 +101,7 @@ export default function Blog() {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <div className="space-y-12">
+            <div className="space-y-24">
               {posts.map((post, index) => (
                 <motion.article
                   key={post.slug}
@@ -108,25 +109,40 @@ export default function Blog() {
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.6, delay: index * 0.05 }}
                   viewport={{ once: true }}
-                  className="border-b border-[#B8AB9C]/20 pb-12 group"
+                  className="border-b border-[#B8AB9C]/20 pb-24 group"
                 >
-                  <div className="flex items-start justify-between gap-6 mb-4">
+                  <div className="flex flex-col md:flex-row items-start justify-between gap-12">
+                    {/* Image Container */}
+                    {post.image && (
+                      <div className="w-full md:w-1/3 aspect-4/3 relative overflow-hidden bg-[#B8AB9C]/10">
+                        <Link href={`/blog/${post.slug}`}>
+                          <Image
+                            src={post.image}
+                            alt={post.title}
+                            fill
+                            className="object-contain object-top grayscale hover:grayscale-0 transition-all duration-700 scale-100 group-hover:scale-110"
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                          />
+                        </Link>
+                      </div>
+                    )}
+
                     <div className="flex-1">
                       <p className="text-xs uppercase tracking-[0.2em] text-[#B8AB9C] mb-4">
                         {post.pubDate}
                       </p>
                       <Link href={`/blog/${post.slug}`} className="group/link">
                         <h2
-                          className="text-3xl md:text-4xl font-light text-[#3d3d3d] mb-4 leading-tight group-hover/link:text-[#C4A69B] transition-colors"
+                          className="text-3xl md:text-5xl font-light text-[#3d3d3d] mb-6 leading-tight group-hover/link:text-[#C4A69B] transition-colors"
                           style={{ fontFamily: "var(--font-display)" }}
                         >
                           {post.title}
                         </h2>
                       </Link>
-                      <p className="text-base text-[#B8AB9C] leading-relaxed mb-6">
+                      <p className="text-base text-[#B8AB9C] leading-relaxed mb-8 max-w-2xl">
                         {post.description}
                       </p>
-                      <div className="flex gap-4">
+                      <div className="flex gap-6">
                         <Link
                           href={`/blog/${post.slug}`}
                           className="inline-flex items-center gap-2 text-sm font-bold text-[#C4A69B] hover:gap-3 transition-all"

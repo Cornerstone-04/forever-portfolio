@@ -22,7 +22,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   useEffect(() => {
     async function loadPost() {
       try {
-        setLoading(true); // Ensure loading state starts true on slug change
+        setLoading(true);
         const allPosts = await fetchBlogPosts();
         const currentPost = allPosts.find((p) => p.slug === slug);
 
@@ -156,7 +156,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
           <div
             className="text-base text-[#B8AB9C] leading-relaxed"
             dangerouslySetInnerHTML={{
-              __html: post.content.substring(0, 500) + "...",
+              __html: post.content.substring(0, 1000) + "...",
             }}
           />
           <p className="mt-8 text-[#B8AB9C]">

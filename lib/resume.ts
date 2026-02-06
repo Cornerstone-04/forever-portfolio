@@ -94,56 +94,54 @@ const education = [
 
 const skills = [
   {
-    category: "Content & Strategy",
+    category: "Skills",
     items: [
-      "Content Strategy",
-      "Brand Voice Development",
-      "Editorial Planning",
-      "Content Audit & Analysis",
-      "Audience Research",
-      "Message Architecture",
-    ],
-  },
-  {
-    category: "Writing & Editing",
-    items: [
-      "Copywriting",
+      "Digital Marketing",
       "Content Writing",
-      "Technical Writing",
-      "Editorial Editing",
-      "Proofreading",
-      "Brand Voice Guidelines",
+      "Copywriting",
+      "Creative Writing",
+      "Editing & Proofreading",
+      "Communication",
+      "SEO",
+      "Blog Writing",
     ],
   },
   {
-    category: "Design & Publishing",
+    category: "Tools",
     items: [
-      "Editorial Design",
-      "Publication Design",
-      "Typography",
-      "Layout Design",
-      "Brand Guidelines",
-      "Figma, InDesign, Adobe Suite",
-    ],
-  },
-  {
-    category: "Tools & Platforms",
-    items: [
-      "Adobe Creative Suite",
-      "Figma",
-      "Content Management Systems",
-      "WordPress",
-      "Google Workspace",
-      "Project Management Tools",
+      "Google Suite",
+      "Microsoft Office Suite",
+      "Airtable",
+      "Trello | ClickUp",
+      "Sendy | Mailchimp | Flodesk",
+      "Quillbot | Grammarly",
+      "Notion",
+      "Canva | Figma",
     ],
   },
 ];
 
 const certifications = [
-  "Product Marketing",
-  "Mastery in Copywriting",
-  "Content Marketing",
-  "Fundamentals of Digital Marketing",
+  {
+    title: "Product Marketing",
+    issuer: "Alt School",
+    year: "2024",
+  },
+  {
+    title: "Mastery in Copywriting",
+    issuer: "Udemy",
+    year: "2022",
+  },
+  {
+    title: "Content Marketing",
+    issuer: "HubSpot Academy",
+    year: "2022",
+  },
+  {
+    title: "Fundamentals of Digital Marketing",
+    issuer: "Google Digital Academy",
+    year: "2022",
+  },
 ];
 
 export { experience, education, skills, certifications };

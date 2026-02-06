@@ -1,3 +1,5 @@
+import { api } from "./api";
+
 export interface BlogPost {
   title: string;
   pubDate: string;
@@ -7,9 +9,31 @@ export interface BlogPost {
   content: string;
   author: string;
   slug: string;
+  image?: string;
 }
 
-// Generate a URL-safe slug from title and date
+// Define types for the RSS API response to fix "any" errors
+interface RSSItem {
+  title: string;
+  pubDate: string;
+  link: string;
+  guid: string;
+  author: string;
+  thumbnail: string;
+  description: string;
+  content: string;
+  enclosure?: {
+    link: string;
+    type: string;
+  };
+}
+
+interface RSSResponse {
+  status: string;
+  feed: object;
+  items: RSSItem[];
+}
+
 export function generateSlug(title: string, date: Date): string {
   const dateStr = date.toISOString().split("T")[0];
   const titleSlug = title
@@ -21,19 +45,27 @@ export function generateSlug(title: string, date: Date): string {
   return `${dateStr}-${titleSlug}`;
 }
 
-// Fetch blog posts from Substack RSS
 export async function fetchBlogPosts(): Promise<BlogPost[]> {
   try {
-    const response = await fetch(
-      "https://api.rss2json.com/v1/api.json?rss_url=https://foreverephraim.substack.com/feed",
-    );
-    const data = await response.json();
+    const response = await api.get<RSSResponse>("/api.json", {
+      params: {
+        rss_url: "https://foreverephraim.substack.com/feed",
+      },
+    });
+
+    const data = response.data;
 
     if (!data.items) return [];
 
-    return data.items.map((item: any) => {
+    // Correctly typed map function
+    return data.items.map((item: RSSItem) => {
       const rawDate = new Date(item.pubDate);
       const slug = generateSlug(item.title, rawDate);
+      let imageUrl = item.enclosure?.link;
+
+      if (imageUrl?.toLowerCase().endsWith(".heic")) {
+        imageUrl = `https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/${encodeURIComponent(imageUrl)}`;
+      }
 
       return {
         title: item.title,
@@ -46,9 +78,10 @@ export async function fetchBlogPosts(): Promise<BlogPost[]> {
         link: item.link,
         description:
           item.description.replace(/<[^>]*>/g, "").substring(0, 200) + "...",
-        content: item.description,
-        author: item.author || "Forever Ephraim",
+        content: item.content,
+        author: item.author,
         slug,
+        image: imageUrl,
       };
     });
   } catch (err) {

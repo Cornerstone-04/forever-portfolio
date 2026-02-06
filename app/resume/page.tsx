@@ -211,8 +211,6 @@ export default function Resume() {
                   </p>
                 </div>
 
-                {/*<p className="text-sm text-[#B8AB9C] mb-2">{edu.details}</p>*/}
-
                 <span className="text-xs uppercase tracking-[0.2em] text-[#B8AB9C]">
                   {edu.year}
                 </span>
@@ -231,27 +229,39 @@ export default function Resume() {
           viewport={{ once: true }}
         >
           <h2
-            className="text-3xl font-light mb-8 text-[#3d3d3d]"
+            className="text-3xl font-light mb-12 text-[#3d3d3d]"
             style={{ fontFamily: "var(--font-display)" }}
           >
             Certifications
           </h2>
 
-          <ul className="space-y-3">
+          <div className="space-y-8">
             {certifications.map((cert, index) => (
-              <motion.li
-                key={cert}
-                initial={{ opacity: 0, x: -10 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.4, delay: index * 0.05 }}
+              <motion.div
+                key={cert.title}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
                 viewport={{ once: true }}
-                className="text-base text-[#B8AB9C] flex items-center gap-3"
+                className="border-l-2 border-[#C4A69B] pl-6 relative"
               >
-                <span className="w-1.5 h-1.5 bg-[#C4A69B] rounded-full" />
-                {cert}
-              </motion.li>
+                <div className="absolute left-0 top-0 w-3 h-3 bg-[#C4A69B] rounded-full -translate-x-1.5" />
+
+                <div className="mb-2">
+                  <h3 className="text-lg font-semibold text-[#3d3d3d]">
+                    {cert.title}
+                  </h3>
+                  <p className="text-base font-medium text-[#C4A69B]">
+                    {cert.issuer}
+                  </p>
+                </div>
+
+                <span className="text-xs uppercase tracking-[0.2em] text-[#B8AB9C]">
+                  {cert.year}
+                </span>
+              </motion.div>
             ))}
-          </ul>
+          </div>
         </motion.div>
       </section>
     </div>
