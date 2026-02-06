@@ -49,22 +49,22 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="mb-8 md:mb-12"
+            className="mb-8"
           >
             <span className="text-[#B8AB9C] text-xs md:text-sm uppercase tracking-[0.3em]">
-              Copywriter & Content Strategist
+              Copywriter &amp; Content Strategist
             </span>
           </motion.div>
 
           {/* MASSIVE stacked headlines */}
-          <div className="space-y-0 leading-[0.85] mb-12">
+          <div className="space-y-0 leading-[0.85] mb-8">
             <motion.div
               initial={{ opacity: 0, y: 50 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
             >
               <h1
-                className="text-[clamp(2.5rem,14vw,14rem)] sm:text-[clamp(3rem,16vw,14rem)] md:text-[clamp(4rem,18vw,14rem)] font-black leading-[0.85] tracking-tighter text-[#3d3d3d] uppercase"
+                className="text-[clamp(2.3rem,12vw,12rem)] sm:text-[clamp(2.8rem,14vw,12rem)] md:text-[clamp(3.8rem,16vw,12rem)] font-black leading-[0.85] tracking-tighter text-[#3d3d3d] uppercase"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
               >
                 Words That
@@ -77,7 +77,7 @@ export default function HomePage() {
               transition={{ duration: 1, delay: 0.5, ease: [0.22, 1, 0.36, 1] }}
             >
               <h1
-                className="text-[clamp(2.5rem,14vw,14rem)] sm:text-[clamp(3rem,16vw,14rem)] md:text-[clamp(4rem,18vw,14rem)] font-black leading-[0.85] tracking-tighter text-[#C4A69B] uppercase"
+                className="text-[clamp(2.3rem,12vw,12rem)] sm:text-[clamp(2.8rem,14vw,12rem)] md:text-[clamp(3.8rem,16vw,12rem)] font-black leading-[0.85] tracking-tighter text-[#C4A69B] uppercase"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
               >
                 Convert
@@ -91,10 +91,10 @@ export default function HomePage() {
               className="relative"
             >
               <h1
-                className="text-[clamp(2.5rem,14vw,14rem)] sm:text-[clamp(3rem,16vw,14rem)] md:text-[clamp(4rem,18vw,14rem)] font-black leading-[0.85] tracking-tighter text-[#3d3d3d] uppercase"
+                className="text-[clamp(2.3rem,12vw,12rem)] sm:text-[clamp(2.8rem,14vw,12rem)] md:text-[clamp(3.8rem,16vw,12rem)] font-black leading-[0.85] tracking-tighter text-[#3d3d3d] uppercase"
                 style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
               >
-                & Connect
+                &amp; Connect
               </h1>
               <motion.div
                 initial={{ scaleX: 0 }}
@@ -104,7 +104,7 @@ export default function HomePage() {
                   delay: 1.2,
                   ease: [0.22, 1, 0.36, 1],
                 }}
-                className="h-[2px] md:h-1 lg:h-2 bg-[#C4A69B] origin-left mt-2 md:mt-4"
+                className="h-0.5 md:h-1 lg:h-2 bg-[#C4A69B] origin-left mt-2 md:mt-4"
               />
             </motion.div>
           </div>
@@ -117,8 +117,9 @@ export default function HomePage() {
             className="max-w-2xl"
           >
             <p className="text-lg md:text-xl text-[#B8AB9C] leading-relaxed mb-8">
-              Crafting compelling narratives that drive engagement, boost
-              conversions, and build meaningful connections with your audience.
+              I&apos;m Forever, and I turn boring brand messages into stuff
+              people actually want to read. If your brand needs words with
+              personality, nice to meet you! 👋🏻
             </p>
             <Link
               href="/work"
@@ -165,7 +166,7 @@ export default function HomePage() {
 
       {/* Featured Work Section */}
       <section className="py-24 md:py-32 px-4 md:px-12">
-        <div className="max-w-[1600px] mx-auto">
+        <div className="max-w-400 mx-auto">
           <div className="grid md:grid-cols-12 gap-12 mb-16">
             <div className="md:col-span-2">
               <span
@@ -248,7 +249,7 @@ export default function HomePage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 md:py-32 px-4 md:px-12 bg-gradient-to-b from-[#ECE4DB] to-[#CFC8BE]/30">
+      <section className="py-24 md:py-32 px-4 md:px-12 bg-linear-to-b from-[#ECE4DB] to-[#CFC8BE]/30">
         <div className="max-w-4xl mx-auto text-center">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
@@ -257,7 +258,7 @@ export default function HomePage() {
             className="text-5xl md:text-7xl font-light mb-8 text-[#3d3d3d]"
             style={{ fontFamily: "var(--font-display)" }}
           >
-            <em>Let's Create Something</em>
+            <em>Let&apos;s Create Something</em>
             <br />
             <span className="text-[#C4A69B]">Remarkable</span>
           </motion.h2>
@@ -268,8 +269,8 @@ export default function HomePage() {
             transition={{ delay: 0.2 }}
             className="text-lg text-[#B8AB9C] mb-12 max-w-2xl mx-auto"
           >
-            Ready to elevate your brand's narrative? Let's collaborate on copy
-            that converts and content that connects.
+            Ready to Transform Your Brand Message? Let&apos;s collaborate on
+            copy that converts and content that connects.
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
