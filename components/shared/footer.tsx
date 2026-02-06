@@ -38,7 +38,7 @@ export function Footer() {
               <br />
               <span className="text-[#C4A69B] italic">Ephraim</span>
             </h2>
-            <p className="text-[#B8AB9C] leading-relaxed max-w-sm">
+            <p className="text-[#B8AB9C] leading-relaxed max-w-sm"> 
               Copywriter &amp; Content Strategist crafting narratives that
               connect, convert, and inspire action.
             </p>
