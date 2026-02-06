@@ -43,7 +43,7 @@ export default function Blog() {
       {/* Articles Section */}
       <section className="max-w-400 mx-auto px-6 pt-24 pb-12">
         {loading ? (
-          <BlogLoader />
+          <BlogLoader label="Loading blog posts..." />
         ) : error ? (
           <BlogError message={error} />
         ) : posts.length > 0 ? (

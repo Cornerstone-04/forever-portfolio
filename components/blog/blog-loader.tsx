@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 
-export const BlogLoader = () => {
+export const BlogLoader = ({ label }: { label: string }) => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -8,7 +8,7 @@ export const BlogLoader = () => {
       transition={{ duration: 0.6 }}
       className="text-center py-12"
     >
-      <p className="text-[#B8AB9C]">Loading articles...</p>
+      <p className="text-[#B8AB9C]">{label}</p>
     </motion.div>
   );
 };

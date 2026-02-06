@@ -3,3 +3,7 @@ export * from "./blog-hero";
 export * from "./blog-loader";
 export * from "./blog-post-card";
 export * from "./blog-newsletter";
+export * from "./post-content";
+export * from "./post-error";
+export * from "./post-header";
+export * from "./related-posts";
