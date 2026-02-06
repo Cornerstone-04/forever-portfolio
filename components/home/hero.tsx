@@ -50,7 +50,6 @@ export function Hero({ y, opacity }: HeroProps) {
             >
               <h1
                 className={`text-[clamp(2.3rem,12vw,12rem)] sm:text-[clamp(2.8rem,14vw,12rem)] md:text-[clamp(3.8rem,16vw,12rem)] font-black leading-[0.85] tracking-tighter uppercase ${hl.color}`}
-                style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
               >
                 {hl.text}
               </h1>

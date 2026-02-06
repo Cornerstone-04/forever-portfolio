@@ -45,10 +45,7 @@ export default function Contact() {
             <span className="text-xs uppercase tracking-[0.3em] text-[#B8AB9C] mb-8 block">
               Get In Touch
             </span>
-            <h1
-              className="text-[clamp(2.5rem,12vw,10rem)] font-black leading-[0.9] tracking-tighter text-[#3d3d3d] uppercase mb-8"
-              style={{ fontFamily: "var(--font-display)", fontWeight: 900 }}
-            >
+            <h1 className="text-[clamp(2.5rem,12vw,10rem)] font-black leading-[0.9] tracking-tighter text-[#3d3d3d] uppercase mb-8">
               Let&apos;s
               <br />
               <span className="text-[#C4A69B]">Connect</span>
