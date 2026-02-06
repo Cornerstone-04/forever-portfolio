@@ -10,8 +10,7 @@ export default function Resume() {
 
   const handleDownload = () => {
     const link = document.createElement("a");
-    link.href =
-      "https://docs.google.com/document/d/1-9yq7-cLr2Rzj4mLxCro9LD-SdVoVALJngmXCefYKuI/edit?usp=sharing";
+    link.href = "/docs/forever-ephraim.pdf";
     // link.href =
     //   "https://docs.google.com/uc?export=download&id=1-9yq7-cLr2Rzj4mLxCro9LD-SdVoVALJngmXCefYKuI";
     link.download = "Forever-Ephraim-Resume.pdf";
