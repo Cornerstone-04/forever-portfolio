@@ -1,7 +1,8 @@
 import axios from "axios";
+import { substackSSR } from "./constants";
 
 export const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_SUBSTACK_RSS,
+  baseURL: substackSSR,
   timeout: 10000,
 });
 

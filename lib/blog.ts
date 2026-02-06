@@ -1,4 +1,5 @@
 import { api } from "./api";
+import { substackDomain } from "./constants";
 
 export interface BlogPost {
   title: string;
@@ -49,7 +50,7 @@ export async function fetchBlogPosts(): Promise<BlogPost[]> {
   try {
     const response = await api.get<RSSResponse>("/api.json", {
       params: {
-        rss_url: "https://foreverephraim.substack.com/feed",
+        rss_url: substackDomain,
       },
     });
 

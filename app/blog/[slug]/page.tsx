@@ -1,8 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Divide } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import { useEffect, useState, use } from "react";
 import { fetchBlogPosts, type BlogPost } from "@/lib/blog";
 import { Divider } from "@/components/ui/divider";
@@ -67,7 +66,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     return (
       <div className="min-h-screen bg-[#ECE4DB]">
         <section className="max-w-4xl mx-auto px-6 py-24">
-        <PostError error={error || "Article not found"} />
+          <PostError error={error || "Article not found"} />
         </section>
       </div>
     );
