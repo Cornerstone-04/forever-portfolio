@@ -19,22 +19,22 @@ export default function Contact() {
   });
   const [submitted, setSubmitted] = useState(false);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  // const handleChange = (
+  //   e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
+  // ) => {
+  //   const { name, value } = e.target;
+  //   setFormData((prev) => ({ ...prev, [name]: value }));
+  // };
 
-  const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
-  };
+  // const handleSubmit = (e: React.ChangeEvent<HTMLFormElement>) => {
+  //   e.preventDefault();
+  //   console.log("Form submitted:", formData);
+  //   setSubmitted(true);
+  //   setTimeout(() => {
+  //     setFormData({ name: "", email: "", subject: "", message: "" });
+  //     setSubmitted(false);
+  //   }, 3000);
+  // };
 
   return (
     <div className="bg-[#ECE4DB] pt-24">
@@ -45,12 +45,7 @@ export default function Contact() {
       {/* Calendar Session */}
       <ContactSession />
       {/* Contact Form Section */}
-      <ContactForm
-        formData={formData}
-        submitted={submitted}
-        handleChange={handleChange}
-        handleSubmit={handleSubmit}
-      />
+      <ContactForm />
       {/* FAQ Section */}
       <ContactFaqs />
     </div>
