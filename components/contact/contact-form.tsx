@@ -1,20 +1,6 @@
 import { motion } from "motion/react";
 import { useState } from "react";
 
-interface ContactFormProps {
-  formData: {
-    name: string;
-    email: string;
-    subject: string;
-    message: string;
-  };
-  submitted: boolean;
-  handleChange: (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>,
-  ) => void;
-  handleSubmit: (e: React.ChangeEvent<HTMLFormElement>) => void;
-}
-
 export const ContactForm = () => {
   const [formData, setFormData] = useState({
     name: "",
