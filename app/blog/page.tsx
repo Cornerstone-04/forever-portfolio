@@ -1,8 +1,6 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useState } from "react";
-import { fetchBlogPosts, type BlogPost } from "@/lib/blog";
 import { Divider } from "@/components/ui/divider";
 import {
   BlogError,
@@ -11,41 +9,22 @@ import {
   BlogNewsletter,
   BlogPostCard,
 } from "@/components/blog";
+import { useBlogPosts } from "../../hooks/use-blog-posts";
 
 export default function Blog() {
-  const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    const loadPosts = async () => {
-      try {
-        const blogPosts = await fetchBlogPosts();
-        setPosts(blogPosts);
-      } catch (err) {
-        setError("Unable to load blog posts at this time.");
-        console.error("[v0] Blog fetch error:", err);
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    loadPosts();
-  }, [posts.length]);
+  const { data: posts = [], isLoading, isError } = useBlogPosts();
 
   return (
     <div className="min-h-screen bg-[#ECE4DB] pt-32">
       {/* Hero Section */}
       <BlogHero />
-
       <Divider width={1600} />
-
       {/* Articles Section */}
       <section className="max-w-400 mx-auto px-6 pt-24 pb-12">
-        {loading ? (
+        {isLoading ? (
           <BlogLoader label="Loading blog posts..." />
-        ) : error ? (
-          <BlogError message={error} />
+        ) : isError ? (
+          <BlogError message="Unable to load blog posts at this time." />
         ) : posts.length > 0 ? (
           <motion.div
             initial={{ opacity: 0, y: 20 }}

@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Inter, Inter_Tight } from "next/font/google";
 import "./globals.css";
 import { Footer, Navigation } from "@/components/shared";
 import { CustomCursor } from "@/components/ui/cursor";
+import QueryProvider from "@/components/providers/query-providers";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,8 +95,7 @@ export default function RootLayout({
         <Navigation />
         <main>
           <CustomCursor />
-
-          {children}
+          <QueryProvider>{children}</QueryProvider>
         </main>
         <Footer />
       </body>

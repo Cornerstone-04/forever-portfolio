@@ -1,9 +1,7 @@
 "use client";
 
-import Link from "next/link";
-import { ArrowLeft } from "lucide-react";
-import { useEffect, useState, use } from "react";
-import { fetchBlogPosts, type BlogPost } from "@/lib/blog";
+import { use } from "react";
+import { useBlogPosts } from "@/hooks/use-blog-posts";
 import { Divider } from "@/components/ui/divider";
 import {
   BlogLoader,
@@ -12,47 +10,19 @@ import {
   PostHeader,
   RelatedPosts,
 } from "@/components/blog";
+import { BlogBreadCrumbs } from "@/components/blog/blog-bread-crumbs";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
 }
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const resolvedParams = use(params);
-  const slug = resolvedParams.slug;
+  const { slug } = use(params);
+  const { data: allPosts = [], isLoading, isError } = useBlogPosts();
+  const post = allPosts.find((p) => p.slug === slug);
+  const relatedPosts = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
 
-  const [post, setPost] = useState<BlogPost | null>(null);
-  const [relatedPosts, setRelatedPosts] = useState<BlogPost[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function loadPost() {
-      try {
-        setLoading(true);
-        const allPosts = await fetchBlogPosts();
-        const currentPost = allPosts.find((p) => p.slug === slug);
-
-        if (!currentPost) {
-          setError("Blog post not found");
-          return;
-        }
-
-        setPost(currentPost);
-        const related = allPosts.filter((p) => p.slug !== slug).slice(0, 3);
-        setRelatedPosts(related);
-      } catch (err) {
-        console.error("[v0] Blog post fetch error:", err);
-        setError("Unable to load blog post at this time.");
-      } finally {
-        setLoading(false);
-      }
-    }
-
-    if (slug) loadPost();
-  }, [slug]);
-
-  if (loading) {
+  if (isLoading) {
     return (
       <div className="min-h-screen bg-[#ECE4DB]">
         <section className="max-w-4xl mx-auto px-6 py-24">
@@ -62,11 +32,13 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     );
   }
 
-  if (error || !post) {
+  if (isError || !post) {
     return (
       <div className="min-h-screen bg-[#ECE4DB]">
         <section className="max-w-4xl mx-auto px-6 py-24">
-          <PostError error={error || "Article not found"} />
+          <PostError
+            error={isError ? "Unable to load article" : "Article not found"}
+          />
         </section>
       </div>
     );
@@ -75,15 +47,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
   return (
     <div className="min-h-screen bg-[#ECE4DB] pt-24">
       {/* Breadcrumb */}
-      <section className="max-w-4xl mx-auto px-6 py-8">
-        <Link
-          href="/blog"
-          className="inline-flex items-center gap-2 text-sm font-medium text-[#C4A69B] hover:gap-3 transition-all"
-        >
-          <ArrowLeft size={16} />
-          Back to Blog
-        </Link>
-      </section>
+      <BlogBreadCrumbs />
       {/* Article Header */}
       <PostHeader post={post} />
       {/* Divider */}
