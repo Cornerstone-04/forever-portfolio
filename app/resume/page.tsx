@@ -11,7 +11,7 @@ import { Divider } from "@/components/ui/divider";
 import { blobURL } from "@/lib/constants";
 
 export default function Resume() {
-  const downloadLink = `${blobURL}/forever-ephraim.pdf`;
+  const downloadLink = `${blobURL}/Forever%20Ephraim%202026.pdf`;
   // const handleDownload = () => {
   //   window.open(downloadLink, "_blank", "noopener,noreferrer");
   // };
