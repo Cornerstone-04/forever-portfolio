@@ -7,5 +7,5 @@
 - [ ] Create individual pages for recent works.
 - [x] Add Portfolio metadata to the website.
 - [x] Add Forever's image to the website.
-- [ ] Add logic for contact form.
+- [x] Add logic for contact form.
 - [x] Add social media links to the website.
