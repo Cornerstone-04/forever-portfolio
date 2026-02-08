@@ -6,6 +6,12 @@ import Link from "next/link";
 
 const featuredWork = [
   {
+    title: "Hackathon Campaign",
+    category: "Audio-Visual Copy",
+    metric: "2,000+ sign-ups in 2 months",
+    skills: ["Scriptwriting", "Storytelling", "Creative Direction"],
+  },
+  {
     title: "Mental Health & Fitness",
     category: "Social Media Copy",
     metric: "235% increase in lead generation",
@@ -16,12 +22,6 @@ const featuredWork = [
     category: "Email Campaign",
     metric: "1,000+ responses in 7 days",
     skills: ["Email Marketing", "Copywriting", "Engagement"],
-  },
-  {
-    title: "Hackathon Campaign",
-    category: "Audio-Visual Copy",
-    metric: "2,000+ sign-ups in 2 months",
-    skills: ["Scriptwriting", "Storytelling", "Creative Direction"],
   },
 ];
 

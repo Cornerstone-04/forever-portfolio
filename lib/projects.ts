@@ -5,12 +5,23 @@ export type Project = {
   description: string;
   metric: string;
   skills: string[];
-  image: string;  
-}
+  image: string;
+};
 
 const projects: Project[] = [
   {
     id: 1,
+    title: "Hackathon Campaign (Klusterthon)",
+    category: "Audio-Visual Copywriting",
+    description:
+      "Wrote and directed copy for all marketing materials, from voiceover scripts and on-screen text to social media and email copy.",
+    metric: "2,000+ sign-ups in under two months",
+    skills: ["Scriptwriting", "Storytelling", "Creative Direction"],
+    image:
+      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop",
+  },
+  {
+    id: 2,
     title: "Mental Health & Fitness",
     category: "Social Media Copy",
     description:
@@ -21,7 +32,7 @@ const projects: Project[] = [
       "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&h=600&fit=crop",
   },
   {
-    id: 2,
+    id: 3,
     title: "Custom Storage (Woodwork)",
     category: "Social Media Copy",
     description:
@@ -32,7 +43,7 @@ const projects: Project[] = [
       "https://images.unsplash.com/photo-1556909212-d5b604d0c90d?w=800&h=600&fit=crop",
   },
   {
-    id: 3,
+    id: 4,
     title: "Ed-Tech Brand (Nigerian Graduate Report)",
     category: "Email Campaign",
     description:
@@ -43,29 +54,7 @@ const projects: Project[] = [
       "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=800&h=600&fit=crop",
   },
   {
-    id: 4,
-    title: "Deela Dental Clinic",
-    category: "Email Campaign",
-    description:
-      "Developed a friendly, youth-oriented campaign that simplified medical language using relatable Nigerian slang, visuals, and humor.",
-    metric: "Simplified medical content (IV aligners)",
-    skills: ["Copywriting", "Email Marketing", "Audience Targeting"],
-    image:
-      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop",
-  },
-  {
     id: 5,
-    title: "Hackathon Campaign (Klusterthon)",
-    category: "Audio-Visual Copywriting",
-    description:
-      "Wrote and directed copy for all video marketing materials, from voiceover scripts to on-screen text. Collaborated with editing team.",
-    metric: "2,000+ sign-ups in under two months",
-    skills: ["Scriptwriting", "Storytelling", "Creative Direction"],
-    image:
-      "https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=600&fit=crop",
-  },
-  {
-    id: 6,
     title: "Laundry Service",
     category: "Social Media Copy",
     description:
@@ -74,6 +63,17 @@ const projects: Project[] = [
     skills: ["Copywriting", "Community Engagement", "Marketing Strategy"],
     image:
       "https://images.unsplash.com/photo-1582735689369-4fe89db7114c?w=800&h=600&fit=crop",
+  },
+  {
+    id: 6,
+    title: "Deela Dental Clinic",
+    category: "Email Campaign",
+    description:
+      "Developed a friendly, youth-oriented campaign that simplified medical language using relatable Nigerian slang, visuals, and humor.",
+    metric: "Simplified medical content (IV aligners)",
+    skills: ["Copywriting", "Email Marketing", "Audience Targeting"],
+    image:
+      "https://images.unsplash.com/photo-1606811971618-4486d14f3f99?w=800&h=600&fit=crop",
   },
 ];
 

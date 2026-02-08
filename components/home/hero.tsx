@@ -13,8 +13,8 @@ interface HeroProps {
 export function Hero({ y, opacity }: HeroProps) {
   const headlines = [
     { text: "Words That", color: "text-[#3d3d3d]", delay: 0.3 },
-    { text: "Convert", color: "text-[#C4A69B]", delay: 0.5 },
-    { text: "& Connect", color: "text-[#3d3d3d]", delay: 0.7, underline: true },
+    { text: "Connect", color: "text-[#C4A69B]", delay: 0.5 },
+    { text: "& Convert", color: "text-[#3d3d3d]", delay: 0.7, underline: true },
   ];
 
   return (
@@ -31,7 +31,7 @@ export function Hero({ y, opacity }: HeroProps) {
           className="mb-8"
         >
           <span className="text-[#B8AB9C] text-xs md:text-sm uppercase tracking-[0.3em]">
-            Copywriter &amp; Content Strategist
+            Content Writer and Strategist
           </span>
         </motion.div>
 
@@ -67,9 +67,8 @@ export function Hero({ y, opacity }: HeroProps) {
           className="max-w-2xl"
         >
           <p className="text-lg md:text-xl text-[#B8AB9C] leading-relaxed mb-8">
-            I turn boring brand messages into stuff people actually want to
-            read. If your brand needs words with personality, nice to meet you!
-            👋🏻
+            I turn bland messages into stuff people actually want to read. If
+            your brand needs that work, nice to meet you! 👋🏻
           </p>
           <Link
             href="/work"
