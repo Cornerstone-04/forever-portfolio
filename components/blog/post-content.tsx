@@ -17,7 +17,7 @@ export const PostContent = ({ post }: { post: BlogPost }) => {
             __html: post.content.substring(0, 5000) + "...",
           }}
         />
-        <p className="mt-8 text-[#B8AB9C]">
+        <p className="mt-8 text-[#B8AB9C] font-semibold italic">
           Read the full article on Substack to see the complete content, images,
           and formatting.
         </p>
