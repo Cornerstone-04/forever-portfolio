@@ -109,10 +109,8 @@ const skills = [
   {
     category: "Tools",
     items: [
-      "Google Suite",
-      "Microsoft Office Suite",
-      "Airtable",
-      "Trello | ClickUp",
+      "Google Suite | Microsoft Office Suite",
+      "Airtable | Trello | ClickUp",
       "Sendy | Mailchimp | Flodesk",
       "Quillbot | Grammarly",
       "Notion",
