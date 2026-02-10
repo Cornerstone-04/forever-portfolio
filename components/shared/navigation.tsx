@@ -43,26 +43,36 @@ export function Navigation() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
-            {links.map((link) => (
-              <Link key={link.href} href={link.href} className="relative group">
-                <span
-                  className={`text-sm uppercase tracking-[0.2em] transition-colors ${
-                    pathname === link.href
-                      ? "text-[#3d3d3d]"
-                      : "text-[#B8AB9C] hover:text-[#3d3d3d]"
-                  }`}
+            {links.map((link) => {
+              const isActive =
+                link.href === "/"
+                  ? pathname === "/"
+                  : pathname.startsWith(link.href);
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="relative group"
                 >
-                  {link.label}
-                </span>
-                {pathname === link.href && (
-                  <motion.div
-                    layoutId="activeLink"
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#C4A69B]"
-                    transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-                  />
-                )}
-              </Link>
-            ))}
+                  <span
+                    className={`text-sm uppercase tracking-[0.2em] transition-colors ${
+                      isActive
+                        ? "text-[#3d3d3d]"
+                        : "text-[#B8AB9C] hover:text-[#3d3d3d]"
+                    }`}
+                  >
+                    {link.label}
+                  </span>
+                  {isActive && (
+                    <motion.div
+                      layoutId="activeLink"
+                      className="absolute -bottom-2 left-0 right-0 h-0.5 bg-[#C4A69B]"
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
+                    />
+                  )}
+                </Link>
+              );
+            })}
           </div>
 
           {/* Mobile Menu Button */}

@@ -1,3 +1,5 @@
+import { formApi } from "@/lib/api";
+import { formspreeID } from "@/lib/constants";
 import { motion } from "motion/react";
 import { useState } from "react";
 
@@ -40,23 +42,16 @@ export const ContactForm = () => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
     setStatus("loading");
 
     try {
-      // Replace with your actual Formspree ID
-      const response = await fetch("https://formspree.io/f/xnjbqvpq", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
+      const response = await formApi.post(formspreeID, formData);
 
-      if (response.ok) {
+      if (response.status === 200) {
         setStatus("success");
         setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        setStatus("error");
       }
     } catch (err) {
       setStatus("error");

@@ -4,6 +4,7 @@ import "./globals.css";
 import { Footer, Navigation } from "@/components/shared";
 import { CustomCursor } from "@/components/ui/cursor";
 import QueryProvider from "@/components/providers/query-providers";
+import { PageLoader } from "@/components/ui/page-loader";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -94,6 +95,7 @@ export default function RootLayout({
       <body className="bg-[#ECE4DB] text-[#3d3d3d] antialiased">
         <Navigation />
         <main>
+          <PageLoader/>
           <CustomCursor />
           <QueryProvider>{children}</QueryProvider>
         </main>
