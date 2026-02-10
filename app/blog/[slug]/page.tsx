@@ -4,13 +4,13 @@ import { use } from "react";
 import { useBlogPosts } from "@/hooks/use-blog-posts";
 import { Divider } from "@/components/ui/divider";
 import {
-  BlogLoader,
+  BlogBreadCrumbs,
+  BlogPostSkeleton,
   PostContent,
   PostError,
   PostHeader,
   RelatedPosts,
 } from "@/components/blog";
-import { BlogBreadCrumbs } from "@/components/blog/blog-bread-crumbs";
 
 interface BlogPostPageProps {
   params: Promise<{ slug: string }>;
@@ -26,7 +26,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
     return (
       <div className="min-h-screen bg-[#ECE4DB]">
         <section className="max-w-4xl mx-auto px-6 py-24">
-          <BlogLoader label="Loading article..." />
+          <BlogPostSkeleton />
         </section>
       </div>
     );

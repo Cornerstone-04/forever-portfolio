@@ -5,11 +5,11 @@ import { Divider } from "@/components/ui/divider";
 import {
   BlogError,
   BlogHero,
-  BlogLoader,
   BlogNewsletter,
   BlogPostCard,
 } from "@/components/blog";
 import { useBlogPosts } from "../../hooks/use-blog-posts";
+import { BlogListSkeleton } from "@/components/blog/blog-skeletons";
 
 export default function Blog() {
   const { data: posts = [], isLoading, isError } = useBlogPosts();
@@ -22,7 +22,7 @@ export default function Blog() {
       {/* Articles Section */}
       <section className="max-w-400 mx-auto px-6 pt-24 pb-12">
         {isLoading ? (
-          <BlogLoader label="Loading blog posts..." />
+          <BlogListSkeleton />
         ) : isError ? (
           <BlogError message="Unable to load blog posts at this time." />
         ) : posts.length > 0 ? (
