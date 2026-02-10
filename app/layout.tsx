@@ -29,18 +29,23 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title:
-    "Forever Ephraim | Creative Copywriter | Content Writer | Email Copywriter | Brand Storyteller | Freelancer",
+    "Forever Ephraim | Creative Copywriter | Content Writer | Brand Storyteller | Freelancer",
   description:
     "I’m Forever, and I turn boring brand messages into stuff people actually want to read. If your brand needs words with personality, nice to meet you!",
   metadataBase: new URL("https://foreverephraim.vercel.app/"),
   openGraph: {
     title:
-      "Forever Ephraim | Creative Copywriter | Content Writer | Email Copywriter | Brand Storyteller | Freelancer",
+      "Forever Ephraim | Creative Copywriter | Content Writer | Brand Storyteller | Freelancer",
     description:
       "I’m Forever, and I turn boring brand messages into stuff people actually want to read. If your brand needs words with personality, nice to meet you!",
     url: "https://foreverephraim.vercel.app/",
     siteName: "Forever Ephraim",
-    images: ["/forever-2.jpeg"],
+    images: [
+      {
+        url: "https://foreverephraim.vercel.app/forever-2.jpeg",
+        alt: "Forever Ephraim – Creative Copywriter and Brand Storyteller",
+      },
+    ],
     locale: "en_US",
     type: "website",
   },
@@ -48,10 +53,15 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     creator: "@the__Tamtam",
     title:
-      "Forever Ephraim | Creative Copywriter | Content Writer | Email Copywriter | Brand Storyteller | Freelancer",
+      "Forever Ephraim | Creative Copywriter | Content Writer | Brand Storyteller | Freelancer",
     description:
       "I’m Forever, and I turn boring brand messages into stuff people actually want to read. If your brand needs words with personality, nice to meet you!",
-    images: ["/forever-2.jpeg"],
+    images: [
+      {
+        url: "https://foreverephraim.vercel.app/forever-2.jpeg",
+        alt: "Forever Ephraim – Creative Copywriter and Brand Storyteller",
+      },
+    ],
   },
   robots: "index, follow",
   icons: {
@@ -95,7 +105,7 @@ export default function RootLayout({
       <body className="bg-[#ECE4DB] text-[#3d3d3d] antialiased">
         <Navigation />
         <main>
-          <PageLoader/>
+          <PageLoader />
           <CustomCursor />
           <QueryProvider>{children}</QueryProvider>
         </main>
